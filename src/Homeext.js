@@ -81,7 +81,7 @@ class Homeext extends Component {
                 specilization,
                 introduceYourself,
                 emirates } = curr_state;
-            if (email.length == 0 || phone_number.length == 0 || firstName.length == 0 || lastName.length == 0 || emirates.length == 0 || visaType.length == 0 || specilization.length == 0 || introduceYourself.length == 0 || introduceYourself.length == 0) {
+            if (email.length == 0 || phone_number.length == 0 || firstName.length == 0 || lastName.length == 0 || emirates.length == 0 || emirates.localeCompare("select") == 0 || visaType.length == 0 || visaType.localeCompare("select") == 0 || specilization.length == 0 || specilization.localeCompare("select") == 0 || introduceYourself.length == 0 || introduceYourself.length == 0) {
                 return false;
             }
             else {
@@ -99,7 +99,7 @@ class Homeext extends Component {
                 city
             } = curr_state
             if (Bemail.length == 0 || Bname.length == 0 || BcontactNumber.length == 0 || contactPerson.length == 0 || Ospecilization.length == 0
-                || OintroduceYourself.length == 0 || city.length == 0) {
+                || OintroduceYourself.length == 0 || city.length == 0 || city.localeCompare("select") == 0 || Ospecilization.localeCompare("select") == 0) {
                 return false;
             }
             else {
@@ -117,7 +117,7 @@ class Homeext extends Component {
             alert("Please fill complete details");
             return;
         }
-        axios.post('http://eventstan.com:3001/user/professionalContactUs',
+        axios.post('https://api.eventstan.com/user/professionalContactUs',
             curr_state
         )
             .then((resp) => {
@@ -141,6 +141,15 @@ class Homeext extends Component {
         });
     }
     render() {
+        var x, y;
+        if (this.state.individual) {
+            x = "highlight";
+            y = "";
+        }
+        else {
+            x = "";
+            y = "highlight";
+        }
         return (
             <div className="homeext">
                 <div className="upper_part">
@@ -256,10 +265,10 @@ class Homeext extends Component {
                         <h2 style={{ color: 'black', textAlign: 'center' }} className="title">Let’s get to know you better.</h2>
                         <br />
                         <div style={{ display: 'flex', justifyContent: 'left' }}>
-                            <li class="nav-item" onClick={this.toggle_form2}>
+                            <li class={"nav-item " + x} onClick={this.toggle_form2}>
                                 Individual
                             </li>
-                            <li class="nav-item" onClick={this.toggle_form}>
+                            <li class={"nav-item " + y} onClick={this.toggle_form}>
                                 Organisation
                             </li>
                         </div>
@@ -291,7 +300,7 @@ class Homeext extends Component {
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label>Contact number</label>
-                                                <input required onChange={this.onchange} type="number" name="phone_number" class="form-control" placeholder="Enter Contact number " />
+                                                <input required onChange={this.onchange} type="text" name="phone_number" class="form-control" placeholder="Enter Contact number " />
                                             </div>
                                         </div>
                                     </div>
@@ -385,7 +394,7 @@ class Homeext extends Component {
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label>Business contact number</label>
-                                                <input required name="BcontactNumber" onChange={this.onchange} type="number" class="form-control" placeholder="Enter Contact number " />
+                                                <input required name="BcontactNumber" onChange={this.onchange} type="text" class="form-control" placeholder="Enter Contact number " />
                                             </div>
                                         </div>
                                     </div>

@@ -6,6 +6,11 @@
 	padding: 30px;
 }
 
+.highlight {
+	background-color: #f47824 !important;
+	color: white !important;
+}
+
 .contact_container li {
 	border: 2px solid #f47824 !important;
 	border-radius: 8px;

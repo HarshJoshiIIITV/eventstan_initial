@@ -42,7 +42,7 @@ class Home extends Component {
             document.getElementById("message_contact2").innerHTML = "Please fill all details!"
             return;
         }
-        axios.post('http://eventstan.com:3001/user/contactUs',
+        axios.post('https://api.eventstan.com/user/contactUs',
             curr_state
         )
             .then((resp) => {
@@ -193,7 +193,7 @@ class Home extends Component {
                 </div>
 
                 <div className="Contact_sec mr-0">
-                    <Container className="contact_container">
+                    <Container id="contactform_home" className="contact_container">
                         <h2 style={{ color: 'black', textAlign: 'center' }} className="title">Contact us</h2>
                         <br />
                         <form onSubmit={this.onsubmit}>
@@ -205,7 +205,7 @@ class Home extends Component {
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label>Mobile number</label>
-                                        <input required onChange={this.onchange} type="number" name="phone_number" class="form-control" />
+                                        <input required onChange={this.onchange} type="text" name="phone_number" class="form-control" placeholder="Enter Contact number " />
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
