@@ -61,25 +61,12 @@ class Home extends Component {
             <div className="App">
                 <div className="upper_part">
                     <div className="mob" style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: '15px', paddingRight: '15px', maxWidth: "1140px", margin: '5px auto' }}>
-                        <div style={{ display: 'flex' }}>
-                            <a href="/eventstan" class="navbar-brand">Event<span className="colored">stan</span></a>
-                            <input style={{ marginLeft: '15px', borderRadius: '8px' }} type="text" placeholder="Search here.." />
-
-                        </div>
-                        <div style={{ display: 'flex' }}>
-                            <Button className="mob_become_p" href="/professional" style={{ backgroundColor: "#F47824" }}>Become a Professional</Button>
-                            <Button style={{ backgroundColor: "#F47824", marginLeft: '15px' }}>Request for Demo</Button>
-                            <Button style={{ backgroundColor: "#F47824", marginLeft: '15px' }}>Menu</Button>
-
-                        </div>
-
-
+                        <a href="/eventstan" class="navbar-brand">Event<span className="colored">stan</span></a>
+                        <Button href="/professional" style={{ backgroundColor: "#F47824" }}>Become a Professional</Button>
                     </div>
                     <div className="banner-content">
                         <h2 className="banner-title">We don’t just create events we create memories</h2>
                         <p className="banner-text">EVENTSTAN is where all your personal and corporate event needs meet under one roof. You choose, and we deliver.</p>
-                        <Button href="/create-event" style={{ backgroundColor: "white", color: 'black' }}>Create an Event</Button>
-                        <Button style={{ backgroundColor: "white", color: 'black', marginLeft: '10px' }}>Hire Professional</Button>
                     </div>
                 </div>
                 <div className="bg-dark-yellow">

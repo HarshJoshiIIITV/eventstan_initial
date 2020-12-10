@@ -190,7 +190,7 @@ a.navbar-brand {
 }
 
 @media (max-width: 500px) {
-	.mob Button {
+	.upper_part Button {
 		margin-top: 20px;
 		text-align: center;
 	}
@@ -205,22 +205,6 @@ a.navbar-brand {
 	}
 	.cardy {
 		height: 300px !important;
-	}
-	.mob div {
-		flex-wrap: wrap;
-	}
-	.mob input {
-		margin-left: 0px !important;
-		width: 127px !important;
-	}
-	.mob .navbar-brand {
-		font-size: 28px;
-	}
-	.mob_become_p {
-		margin-top: 10px;
-	}
-	.banner-content {
-		padding-top: 50px !important;
 	}
 }
 
