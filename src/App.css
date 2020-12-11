@@ -16,6 +16,10 @@ a.navbar-brand {
 	text-transform: uppercase;
 }
 
+.who_we_are {
+	background-image: url('./assets/yellow_hover.png');
+}
+
 .navbar-brand {
 	display: inline-block;
 	padding-top: 0.3125rem;
@@ -24,6 +28,9 @@ a.navbar-brand {
 	font-size: 1.25rem;
 	line-height: inherit;
 	white-space: nowrap;
+}
+#contact_abc label {
+	font-weight: bold !important;
 }
 
 .banner-content {
@@ -205,6 +212,9 @@ a.navbar-brand {
 	}
 	.cardy {
 		height: 300px !important;
+	}
+	.upper_part {
+		background-image: url(./assets/mob_back.png);
 	}
 }
 

@@ -32,6 +32,13 @@
 	cursor: pointer;
 }
 
+#abc1 label {
+	font-weight: bold !important;
+}
+#abc7 label {
+	font-weight: bold !important;
+}
+
 .contact_container li:active {
 	color: #f47824 !important;
 }

@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import img0 from './assets/Home/room-5.jpg'
+import img0 from './assets/home_box.png'
 import img1 from './assets/Home/arrow_img.png'
 import img4 from './assets/Home/group24.png'
 import img10 from './assets/Home/group25.png'
@@ -15,6 +15,7 @@ import img9 from './assets/Home/group343.png'
 import img11 from './assets/Home/dumble.png'
 import { Component } from 'react';
 import axios from 'axios';
+import ReactFlagsSelect from 'react-flags-select';
 
 class Home extends Component {
     constructor() {
@@ -32,14 +33,28 @@ class Home extends Component {
         });
     }
 
+    on_tele_change = (e) => {
+        const re = /^[0-9\b]+$/;
+        if (e.target.value === '' || re.test(e.target.value)) {
+            this.setState({ phone_number: e.target.value })
+        }
+    }
+
     onsubmit = (e) => {
         e.preventDefault();
         const curr_state = { phone_number: this.state.phone_number, name: this.state.name, email: this.state.email, message: this.state.message, userType: "USER" }
         console.log(curr_state + "*******");
-        if (curr_state.phone_number == null || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
+        if (curr_state.phone_number == null || !(/^\d+$/.test(curr_state.phone_number)) || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
             document.getElementById("message_contact2").innerHTML = "Please fill all details!"
+            setTimeout(
+                () => {
+                    document.getElementById("message_contact").innerHTML = "";
+                    document.getElementById("message_contact2").innerHTML = "";
+                },
+                5000
+            )
             return;
         }
         axios.post('https://api.eventstan.com/user/contactUs',
@@ -49,11 +64,29 @@ class Home extends Component {
                 document.getElementById("message_contact2").innerHTML = ""
                 document.getElementById("message_contact").innerHTML = ""
                 document.getElementById("message_contact").innerHTML = "Thanks for contacting, Our Member reach out to you soon"
+                var frm = document.getElementById('contact_abc');
+                setTimeout(
+                    () => {
+                        document.getElementById("message_contact").innerHTML = "";
+                        document.getElementById("message_contact2").innerHTML = "";
+                    },
+                    5000
+                );
+                frm.reset();  // Reset all form data
+                document.getElementById('tele_1').value = '';
+
             })
             .catch((err) => {
                 document.getElementById("message_contact2").innerHTML = ""
                 document.getElementById("message_contact").innerHTML = ""
                 document.getElementById("message_contact2").innerHTML = "Please fill all details!"
+                setTimeout(
+                    () => {
+                        document.getElementById("message_contact").innerHTML = "";
+                        document.getElementById("message_contact2").innerHTML = "";
+                    },
+                    5000
+                );
             });
     }
     render() {
@@ -69,10 +102,10 @@ class Home extends Component {
                         <p className="banner-text">EVENTSTAN is where all your personal and corporate event needs meet under one roof. You choose, and we deliver.</p>
                     </div>
                 </div>
-                <div className="bg-dark-yellow">
+                <div className="bg-dark-yellow who_we_are">
                     <div>
-                        <Container>
-                            <Row>
+                        <Container >
+                            <Row >
                                 <Col xs={12} md={5}>
                                     <div className="video-section">
                                         <img class="img-fluid w-100 border-radius" src={img0} />
@@ -196,7 +229,7 @@ class Home extends Component {
                     <Container id="contactform_home" className="contact_container">
                         <h2 style={{ color: 'black', textAlign: 'center' }} className="title">Contact us</h2>
                         <br />
-                        <form onSubmit={this.onsubmit}>
+                        <form id="contact_abc" onSubmit={this.onsubmit} >
                             <div class="form-group">
                                 <label>Full name</label>
                                 <input required onChange={this.onchange} type="text" class="form-control" name="name" placeholder="Enter your name" />
@@ -204,14 +237,15 @@ class Home extends Component {
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                        <label>Mobile number</label>
-                                        <input required onChange={this.onchange} type="text" name="phone_number" class="form-control" placeholder="Enter Contact number " />
+                                        <label>Contact number</label>
+
+                                        <input pattern="[0-9]*" id="tele_1" value={this.state.phone_number} required onChange={this.on_tele_change} type=" tel" name="phone_number" class="form-control" placeholder="Enter Mobile number " />
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label >Email ID</label>
-                                        <input required onChange={this.onchange} type="email" class="form-control" name="email" placeholder="Enter Email ID " />
+                                        <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required onChange={this.onchange} type="email" class="form-control" name="email" placeholder="Enter Email ID " />
                                     </div>
                                 </div>
                             </div>
