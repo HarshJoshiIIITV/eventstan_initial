@@ -42,7 +42,7 @@ class Home extends Component {
         e.preventDefault();
         const curr_state = { phone_number: this.state.phone_number, name: this.state.name, email: this.state.email, message: this.state.message, userType: "USER" }
         console.log(curr_state + "*******");
-        if (curr_state.phone_number == null || curr_state.phone_number.length == 0 || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
+        if (curr_state.phone_number == null || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17) || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
             document.getElementById("message_contact2").innerHTML = "Please fill all details!"
@@ -230,12 +230,12 @@ class Home extends Component {
                         <form id="contact_abc" onSubmit={this.onsubmit} >
                             <div class="form-group">
                                 <label>Full name</label>
-                                <input required onChange={this.onchange} type="text" class="form-control" name="name" placeholder="Enter your name" />
+                                <input pattern="[A-Za-z ]{1,32}" required onChange={this.onchange} type="text" class="form-control" name="name" placeholder="Enter your name" />
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                        <label>Contact number</label>
+                                        <label>Mobile number</label>
                                         <PhoneInput
                                             id="tele_1"
                                             defaultCountry="US"

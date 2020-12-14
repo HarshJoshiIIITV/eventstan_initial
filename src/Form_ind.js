@@ -42,7 +42,7 @@ class Form_ind extends Component {
             specilization,
             introduceYourself,
             emirates } = curr_state;
-        if (email.length == 0 || phone_number == undefined || phone_number.length == 0 || firstName.length == 0 || lastName.length == 0 || emirates.length == 0 || emirates.localeCompare("select") == 0 || visaType.length == 0 || visaType.localeCompare("select") == 0 || specilization.length == 0 || specilization.localeCompare("select") == 0 || introduceYourself.length == 0 || introduceYourself.length == 0) {
+        if (email.length == 0 || phone_number == undefined || !(phone_number.length >= 10 && phone_number.length <= 17) || firstName.length == 0 || lastName.length == 0 || emirates.length == 0 || emirates.localeCompare("select") == 0 || visaType.length == 0 || visaType.localeCompare("select") == 0 || specilization.length == 0 || specilization.localeCompare("select") == 0 || introduceYourself.length == 0 || introduceYourself.length == 0) {
             return false;
         }
         else {
@@ -104,13 +104,13 @@ class Form_ind extends Component {
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
                             <label>First name</label>
-                            <input autoComplete="nope" id="abc2" required onChange={this.onchange} name="firstName" type="text" class="form-control" placeholder="Enter first name " />
+                            <input pattern="[A-Za-z ]{1,32}" autoComplete="nope" id="abc2" required onChange={this.onchange} name="firstName" type="text" class="form-control" placeholder="Enter first name " />
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
                             <label >Last name</label>
-                            <input autoComplete="nope" id="abc3" required name="lastName" onChange={this.onchange} type="text" class="form-control" placeholder="Enter last name " />
+                            <input pattern="[A-Za-z ]{1,32}" autoComplete="nope" id="abc3" required name="lastName" onChange={this.onchange} type="text" class="form-control" placeholder="Enter last name " />
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@ class Form_ind extends Component {
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label>Contact number</label>
+                            <label>Mobile Number</label>
                             <PhoneInput
                                 id="abc5"
                                 defaultCountry="US"
@@ -138,7 +138,7 @@ class Form_ind extends Component {
                         <div class="form-group">
                             <label >Emirates</label>
                             <select autoComplete="nope" required onChange={this.onchange} id="emirates" name="emirates" class="form-control" placeholder="Select">
-                                <option value="select">Select</option>
+                                <option value="">Select</option>
                                 <option value="abu dhabi">Abu dhabi</option>
                                 <option value="dubai">Dubai</option>
                                 <option value="ajman">Ajman</option>
@@ -153,7 +153,7 @@ class Form_ind extends Component {
                         <div class="form-group">
                             <label>Visa type</label>
                             <select autoComplete="nope" required onChange={this.onchange} id="visa" name="visaType" class="form-control" placeholder="Select">
-                                <option value="select">Select</option>
+                                <option value="">Select</option>
                                 <option value="residence">Residence</option>
                                 <option value="employment">Emploment</option>
                                 <option value="visit">Visit</option>
@@ -167,7 +167,7 @@ class Form_ind extends Component {
                         <div class="form-group">
                             <label >Specilization</label>
                             <select autoComplete="nope" required onChange={this.onchange} id="roles" name="specilization" class="form-control" placeholder="Select">
-                                <option value="select">Select</option>
+                                <option value="">Select</option>
                                 <option value="anchors">Anchors/Mcs</option>
                                 <option value="celebrity">Celebrity</option>
                                 <option value="dj">DJ</option>

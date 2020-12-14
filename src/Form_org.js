@@ -40,7 +40,7 @@ class Form_org extends Component {
             OintroduceYourself,
             city
         } = curr_state
-        if (Bemail.length == 0 || Bname.length == 0 || BcontactNumber == undefined || BcontactNumber.length == 0 || contactPerson.length == 0 || Ospecilization.length == 0
+        if (Bemail.length == 0 || Bname.length == 0 || BcontactNumber == undefined || !(BcontactNumber.length >= 10 && BcontactNumber.length <= 17) || contactPerson.length == 0 || Ospecilization.length == 0
             || OintroduceYourself.length == 0 || city.length == 0 || city.localeCompare("select") == 0 || Ospecilization.localeCompare("select") == 0) {
             return false;
         }
@@ -117,12 +117,12 @@ class Form_org extends Component {
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
                             <label >Contact person</label>
-                            <input required name="contactPerson" autoComplete="nope" id="abc10" onChange={this.onchange} type="text" class="form-control" placeholder="Enter person name " />
+                            <input pattern="[A-Za-z ]{1,32}" required name="contactPerson" autoComplete="nope" id="abc10" onChange={this.onchange} type="text" class="form-control" placeholder="Enter person name " />
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label>Business contact number</label>
+                            <label>Business mobile number</label>
                             <PhoneInput
                                 id="abc11"
                                 defaultCountry="US"
@@ -137,7 +137,7 @@ class Form_org extends Component {
                         <div class="form-group">
                             <label >City</label>
                             <select required onChange={this.onchange} id="cars" autoComplete="nope" name="city" class="form-control" placeholder="Select">
-                                <option value="select">Select</option>
+                                <option value="">Select</option>
                                 <option value="abu dhabi">Abu dhabi</option>
                                 <option value="dubai">Dubai</option>
                                 <option value="ajman">Ajman</option>
@@ -152,7 +152,7 @@ class Form_org extends Component {
                         <div class="form-group">
                             <label >Specilization</label>
                             <select required onChange={this.onchange} id="cars2" autoComplete="nope" name="Ospecilization" class="form-control" placeholder="Select">
-                                <option value="select">Select</option>
+                                <option value="">Select</option>
                                 <option value="anchors">Anchors/Mcs</option>
                                 <option value="celebrity">Celebrity</option>
                                 <option value="dj">DJ</option>
