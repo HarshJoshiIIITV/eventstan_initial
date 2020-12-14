@@ -125,7 +125,10 @@ class Form_org extends Component {
                             <label>Business mobile number</label>
                             <PhoneInput
                                 id="abc11"
-                                defaultCountry="US"
+                                international
+                                countryCallingCodeEditable={false}
+                                defaultCountry="AE"
+
                                 placeholder="Enter Mobile number"
                                 onChange={this.on_tele_change} />
                         </div>

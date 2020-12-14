@@ -88,6 +88,7 @@ class Home extends Component {
             });
     }
     render() {
+        console.log(this.state.phone_number)
         return (
             <div className="App">
                 <div className="upper_part">
@@ -238,8 +239,11 @@ class Home extends Component {
                                     <div class="form-group">
                                         <label>Mobile number</label>
                                         <PhoneInput
+                                            // value={this.state.phone_number}
+                                            international
+                                            countryCallingCodeEditable={false}
+                                            defaultCountry="AE"
                                             id="tele_1"
-                                            defaultCountry="US"
                                             placeholder="Enter Mobile number"
                                             onChange={this.on_tele_change} />
                                     </div>

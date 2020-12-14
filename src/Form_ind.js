@@ -126,7 +126,9 @@ class Form_ind extends Component {
                             <label>Mobile Number</label>
                             <PhoneInput
                                 id="abc5"
-                                defaultCountry="US"
+                                international
+                                countryCallingCodeEditable={false}
+                                defaultCountry="AE"
                                 placeholder="Enter Mobile number"
                                 onChange={this.on_tele_change} />
 
