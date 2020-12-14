@@ -41,7 +41,7 @@ class Home extends Component {
     onsubmit = (e) => {
         e.preventDefault();
         const curr_state = { phone_number: this.state.phone_number, name: this.state.name, email: this.state.email, message: this.state.message, userType: "USER" }
-        console.log(curr_state + "*******");
+        // console.log(curr_state + "*******");
         if (curr_state.phone_number == null || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17) || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
@@ -88,7 +88,7 @@ class Home extends Component {
             });
     }
     render() {
-        console.log(this.state.phone_number)
+        // console.log(this.state.phone_number)
         return (
             <div className="App">
                 <div className="upper_part">
