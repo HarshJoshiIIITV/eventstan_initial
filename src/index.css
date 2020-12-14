@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'campton';
+	src: local('campton'),
+		url(./assets/campton/campton-book.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'campton_bold';
+	src: local('campton_bold'),
+		url(./assets/campton/campton-medium.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'campton_semibold';
+	src: local('campton_semibold'),
+		url(./assets/campton/campton-semibold.ttf) format('truetype');
+}

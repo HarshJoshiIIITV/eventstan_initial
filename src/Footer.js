@@ -9,7 +9,6 @@ const Footer = () => {
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div>
                             <h4>Eventstan</h4>
-                            <p><a href="/eventstan#contactform_home">Contact us</a></p>
                             <p><a href="/professional">Professional</a></p>
                         </div>
                         <div>
@@ -31,7 +30,6 @@ const Footer = () => {
                 <div style={{ padding: '10px' }}>
                     <div style={{ paddingTop: '8px' }}>
                         <h4>Eventstan</h4>
-                        <p><a href="/eventstan#contactform_home">Contact us</a></p>
                         <p><a href="/professional">Professional</a></p>
                     </div>
                     <br />

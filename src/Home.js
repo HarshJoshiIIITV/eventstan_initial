@@ -109,6 +109,7 @@ class Home extends Component {
                                         <img class="img-fluid w-100 border-radius" src={img0} />
                                     </div>
                                 </Col>
+                                <Col md={1} />
                                 <Col xs={12} md={5} style={{ paddingTop: '25px' }}>
                                     <h2 class="title">Who we are?</h2>
                                     <p class="p-text">
