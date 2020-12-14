@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import { Button } from 'react-bootstrap'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 class Form_ind extends Component {
     constructor() {
@@ -27,11 +28,9 @@ class Form_ind extends Component {
     }
 
     on_tele_change = (e) => {
-        const re = /^[0-9\b]+$/;
-        if (e.target.value === '' || re.test(e.target.value)) {
-            this.setState({ phone_number: e.target.value })
-        }
+        this.setState({ phone_number: e })
     }
+
 
     valid = (curr_state) => {
         const {
@@ -43,7 +42,7 @@ class Form_ind extends Component {
             specilization,
             introduceYourself,
             emirates } = curr_state;
-        if (email.length == 0 || phone_number.length == 0 || !(/^\d+$/.test(phone_number)) || firstName.length == 0 || lastName.length == 0 || emirates.length == 0 || emirates.localeCompare("select") == 0 || visaType.length == 0 || visaType.localeCompare("select") == 0 || specilization.length == 0 || specilization.localeCompare("select") == 0 || introduceYourself.length == 0 || introduceYourself.length == 0) {
+        if (email.length == 0 || phone_number == undefined || phone_number.length == 0 || firstName.length == 0 || lastName.length == 0 || emirates.length == 0 || emirates.localeCompare("select") == 0 || visaType.length == 0 || visaType.localeCompare("select") == 0 || specilization.length == 0 || specilization.localeCompare("select") == 0 || introduceYourself.length == 0 || introduceYourself.length == 0) {
             return false;
         }
         else {
@@ -125,7 +124,12 @@ class Form_ind extends Component {
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
                             <label>Contact number</label>
-                            <input required onChange={this.on_tele_change} value={this.state.phone_number} autoComplete="nope" id="abc5" type="text" name="phone_number" class="form-control" placeholder="Enter Mobile number " />
+                            <PhoneInput
+                                id="abc5"
+                                defaultCountry="US"
+                                placeholder="Enter Mobile number"
+                                onChange={this.on_tele_change} />
+
                         </div>
                     </div>
                 </div>

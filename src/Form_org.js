@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Button } from 'react-bootstrap'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 class Form_org extends Component {
     constructor() {
@@ -23,11 +25,9 @@ class Form_org extends Component {
         });
     }
     on_tele_change = (e) => {
-        const re = /^[0-9\b]+$/;
-        if (e.target.value === '' || re.test(e.target.value)) {
-            this.setState({ BcontactNumber: e.target.value })
-        }
+        this.setState({ BcontactNumber: e })
     }
+
 
     valid = (curr_state) => {
 
@@ -40,7 +40,7 @@ class Form_org extends Component {
             OintroduceYourself,
             city
         } = curr_state
-        if (Bemail.length == 0 || Bname.length == 0 || BcontactNumber.length == 0 || !(/^\d+$/.test(BcontactNumber)) || contactPerson.length == 0 || Ospecilization.length == 0
+        if (Bemail.length == 0 || Bname.length == 0 || BcontactNumber == undefined || BcontactNumber.length == 0 || contactPerson.length == 0 || Ospecilization.length == 0
             || OintroduceYourself.length == 0 || city.length == 0 || city.localeCompare("select") == 0 || Ospecilization.localeCompare("select") == 0) {
             return false;
         }
@@ -123,7 +123,11 @@ class Form_org extends Component {
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="form-group">
                             <label>Business contact number</label>
-                            <input required name="BcontactNumber" autoComplete="nope" id="abc11" value={this.state.BcontactNumber} onChange={this.on_tele_change} type="text" class="form-control" placeholder="Enter Mobile number " />
+                            <PhoneInput
+                                id="abc11"
+                                defaultCountry="US"
+                                placeholder="Enter Mobile number"
+                                onChange={this.on_tele_change} />
                         </div>
                     </div>
                 </div>

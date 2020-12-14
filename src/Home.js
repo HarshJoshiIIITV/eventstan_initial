@@ -15,7 +15,8 @@ import img9 from './assets/Home/group343.png'
 import img11 from './assets/Home/dumble.png'
 import { Component } from 'react';
 import axios from 'axios';
-import ReactFlagsSelect from 'react-flags-select';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 class Home extends Component {
     constructor() {
@@ -34,17 +35,14 @@ class Home extends Component {
     }
 
     on_tele_change = (e) => {
-        const re = /^[0-9\b]+$/;
-        if (e.target.value === '' || re.test(e.target.value)) {
-            this.setState({ phone_number: e.target.value })
-        }
+        this.setState({ phone_number: e })
     }
 
     onsubmit = (e) => {
         e.preventDefault();
         const curr_state = { phone_number: this.state.phone_number, name: this.state.name, email: this.state.email, message: this.state.message, userType: "USER" }
         console.log(curr_state + "*******");
-        if (curr_state.phone_number == null || !(/^\d+$/.test(curr_state.phone_number)) || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
+        if (curr_state.phone_number == null || curr_state.phone_number.length == 0 || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
             document.getElementById("message_contact2").innerHTML = "Please fill all details!"
@@ -238,8 +236,11 @@ class Home extends Component {
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label>Contact number</label>
-
-                                        <input pattern="[0-9]*" id="tele_1" value={this.state.phone_number} required onChange={this.on_tele_change} type=" tel" name="phone_number" class="form-control" placeholder="Enter Mobile number " />
+                                        <PhoneInput
+                                            id="tele_1"
+                                            defaultCountry="US"
+                                            placeholder="Enter Mobile number"
+                                            onChange={this.on_tele_change} />
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
