@@ -150,7 +150,7 @@ class Homeext extends Component {
                 </div>
                 <div className="Contact_sec mr-0">
                     <Container className="contact_container" id="contact_ext">
-                        <h2 style={{ color: 'black', textAlign: 'center' }} className="title">Let’s get to know you better.</h2>
+                        <h2 style={{ color: '#2D2D2D', textAlign: 'center' }} className="title">Let’s get to know you better.</h2>
                         <br />
                         <div style={{ display: 'flex', justifyContent: 'left' }}>
                             <li class={"nav-item " + x} onClick={this.toggle_form2}>

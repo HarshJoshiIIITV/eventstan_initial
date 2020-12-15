@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                     <hr class="bg-light" />
                     <div style={{ textAlign: 'center' }}>
-                        <h4 class="navbar-brand">Event<span className="colored">stan</span></h4>
+                        <h4 class="navbar-brand" style={{ fontSize: '32.5px' }}>EVENT<span className="colored">STAN</span></h4>
                         <h4 style={{ fontSize: '16px' }}>Copyrights © 2020 Eventstan. All Rights Reserved</h4>
                     </div>
 
@@ -44,7 +44,7 @@ const Footer = () => {
 
                     <hr class="bg-light" />
                     <div style={{ textAlign: 'center' }}>
-                        <h4 class="navbar-brand">Event<span className="colored">stan</span></h4>
+                        <h4 class="navbar-brand">EVENT<span className="colored">STAN</span></h4>
                         <h4 style={{ fontSize: '16px' }}>Copyrights © 2020 Eventstan. All Rights Reserved</h4>
                     </div>
 

@@ -35,6 +35,7 @@ a.navbar-brand {
 }
 #contact_abc label {
 	font-weight: bold !important;
+	color: #2d2d2d;
 }
 
 .banner-content {
@@ -110,7 +111,7 @@ a.navbar-brand {
 	padding: 30px 20px;
 	border-radius: 10px;
 	box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.12);
-	height: 400px !important;
+	height: 420px !important;
 	margin: 20px;
 	display: block !important;
 }
@@ -118,7 +119,7 @@ a.navbar-brand {
 .card p {
 	color: black;
 	margin-top: 20px;
-	font-size: 15px;
+	font-size: 18px;
 }
 
 .joining-us-bg {
@@ -146,11 +147,14 @@ a.navbar-brand {
 }
 
 .space h3 {
-	font-size: 30px;
+	font-size: 16px;
+}
+.space p {
+	font-size: 16px;
 }
 
 .para3 .card {
-	height: 310px !important;
+	height: 330px !important;
 }
 
 .Contact_sec {
@@ -205,6 +209,9 @@ a.navbar-brand {
 	.mob {
 		flex-wrap: wrap;
 	}
+	.button_homepage {
+		font-size: 14px !important;
+	}
 	.Contact_sec {
 		margin-top: 30px !important;
 	}
@@ -216,6 +223,9 @@ a.navbar-brand {
 	}
 	.upper_part {
 		background-image: url(./assets/mob_back.png);
+	}
+	a.navbar-brand {
+		font-size: 22px;
 	}
 }
 

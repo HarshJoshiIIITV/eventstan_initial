@@ -15,3 +15,14 @@
 	src: local('campton_semibold'),
 		url(./assets/campton/campton-semibold.ttf) format('truetype');
 }
+
+.footer h4 {
+	font-weight: 600;
+}
+
+h2 {
+	font-weight: 600 !important;
+}
+h3 {
+	font-weight: 600 !important;
+}
