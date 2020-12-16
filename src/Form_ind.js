@@ -3,11 +3,14 @@ import axios from 'axios';
 import { Button } from 'react-bootstrap'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import Backdrop from './Backdrop/Backdrop';
+import PopUp from './PopUp'
 
 class Form_ind extends Component {
     constructor() {
         super();
         this.state = {
+            popup: false,
             type: "1",
             email: "",
             phone_number: "",
@@ -30,6 +33,30 @@ class Form_ind extends Component {
     on_tele_change = (e) => {
         this.setState({ phone_number: e })
     }
+    toogle_popup = () => {
+        this.setState({
+            popup: !this.state.popup
+        })
+    }
+    backdropCLickHandler = () => {
+        this.setState({
+            popup: false,
+        });
+
+    }
+    set_null = () => {
+        this.setState({
+            email: "",
+            phone_number: "",
+            firstName: "",
+            lastName: "",
+            visaType: "",
+            specilization: "",
+            introduceYourself: "",
+            emirates: "",
+        })
+    }
+
 
 
     valid = (curr_state) => {
@@ -52,7 +79,19 @@ class Form_ind extends Component {
 
     onsubmit1 = (event) => {
         event.preventDefault();
-        if (!this.valid(this.state)) {
+        const curr_state = {
+            type: "1",
+            email: this.state.email,
+            phone_number: this.state.phone_number,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            visaType: this.state.visaType,
+            specilization: this.state.specilization,
+            introduceYourself: this.state.introduceYourself,
+            emirates: this.state.emirates,
+
+        }
+        if (!this.valid(curr_state)) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
             document.getElementById("message_contact2").innerHTML = "Please fill all details!"
@@ -66,12 +105,14 @@ class Form_ind extends Component {
             return;
         }
         axios.post('https://api.eventstan.com/user/professionalContactUs',
-            this.state
+            curr_state
         )
             .then((resp) => {
                 document.getElementById("message_contact2").innerHTML = ""
                 document.getElementById("message_contact").innerHTML = ""
-                document.getElementById("message_contact").innerHTML = "Thanks for contacting, Our Member reach out to you soon"
+                // document.getElementById("message_contact").innerHTML = "Thanks for contacting, Our Member reach out to you soon"
+                this.set_null();
+                this.toogle_popup();
                 setTimeout(
                     () => {
                         document.getElementById("message_contact").innerHTML = "";
@@ -98,6 +139,10 @@ class Form_ind extends Component {
             });
     }
     render() {
+        let backdrop;
+        if (this.state.popup) {
+            backdrop = <Backdrop click={this.backdropCLickHandler} />;
+        }
         return (
             <form autoComplete="nope" id="abc1" onSubmit={this.onsubmit1}>
                 <div class="row">
@@ -125,6 +170,7 @@ class Form_ind extends Component {
                         <div class="form-group">
                             <label>Mobile Number</label>
                             <PhoneInput
+                                value={this.state.phone_number}
                                 id="abc5"
                                 international
                                 countryCallingCodeEditable={false}
@@ -199,7 +245,10 @@ class Form_ind extends Component {
                 <h6 id="message_contact" style={{ color: 'green' }}></h6>
                 <h6 id="message_contact2" style={{ color: 'red' }}></h6>
                 <Button type="submit" className="btn">Submit</Button>
-
+                {this.state.popup ?
+                    < PopUp />
+                    : null}
+                {backdrop}
             </form>
 
 

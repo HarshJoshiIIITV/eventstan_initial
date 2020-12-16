@@ -3,11 +3,14 @@ import axios from 'axios';
 import { Button } from 'react-bootstrap'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import Backdrop from './Backdrop/Backdrop';
+import PopUp from './PopUp'
 
 class Form_org extends Component {
     constructor() {
         super();
         this.state = {
+            popup: false,
             type: "2",
             Bemail: "",
             Bname: "",
@@ -26,6 +29,30 @@ class Form_org extends Component {
     }
     on_tele_change = (e) => {
         this.setState({ BcontactNumber: e })
+    }
+
+    toogle_popup = () => {
+        this.setState({
+            popup: !this.state.popup
+        })
+    }
+    backdropCLickHandler = () => {
+        this.setState({
+            popup: false,
+        });
+
+    }
+    set_null = () => {
+        this.setState({
+            Bemail: "",
+            Bname: "",
+            BcontactNumber: "",
+            contactPerson: "",
+            Ospecilization: "",
+            OintroduceYourself: "",
+            city: ""
+
+        })
     }
 
 
@@ -51,7 +78,18 @@ class Form_org extends Component {
 
     onsubmit1 = (event) => {
         event.preventDefault();
-        if (!this.valid(this.state)) {
+        const curr_state = {
+            type: "2",
+            Bemail: this.state.Bemail,
+            Bname: this.state.Bname,
+            BcontactNumber: this.state.BcontactNumber,
+            contactPerson: this.state.contactPerson,
+            Ospecilization: this.state.Ospecilization,
+            OintroduceYourself: this.state.OintroduceYourself,
+            city: this.state.city
+
+        }
+        if (!this.valid(curr_state)) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
             document.getElementById("message_contact2").innerHTML = "Please fill all details!"
@@ -65,12 +103,14 @@ class Form_org extends Component {
             return;
         }
         axios.post('https://api.eventstan.com/user/professionalContactUs',
-            this.state
+            curr_state
         )
             .then((resp) => {
                 document.getElementById("message_contact2").innerHTML = ""
                 document.getElementById("message_contact").innerHTML = ""
-                document.getElementById("message_contact").innerHTML = "Thanks for contacting, Our Member reach out to you soon"
+                // document.getElementById("message_contact").innerHTML = "Thanks for contacting, Our Member reach out to you soon"
+                this.set_null();
+                this.toogle_popup();
                 setTimeout(
                     () => {
                         document.getElementById("message_contact").innerHTML = "";
@@ -97,6 +137,10 @@ class Form_org extends Component {
             });
     }
     render() {
+        let backdrop;
+        if (this.state.popup) {
+            backdrop = <Backdrop click={this.backdropCLickHandler} />;
+        }
         return (
             <form autoComplete="nope" id="abc7" onSubmit={this.onsubmit1} >
                 <div class="row">
@@ -128,7 +172,7 @@ class Form_org extends Component {
                                 international
                                 countryCallingCodeEditable={false}
                                 defaultCountry="AE"
-
+                                value={this.state.BcontactNumber}
                                 placeholder="Enter Mobile number"
                                 onChange={this.on_tele_change} />
                         </div>
@@ -185,6 +229,10 @@ class Form_org extends Component {
                 <h6 id="message_contact" style={{ color: 'green' }}></h6>
                 <h6 id="message_contact2" style={{ color: 'red' }}></h6>
                 <Button type="submit" className="btn">Submit</Button>
+                {this.state.popup ?
+                    < PopUp />
+                    : null}
+                {backdrop}
             </form>
 
         )

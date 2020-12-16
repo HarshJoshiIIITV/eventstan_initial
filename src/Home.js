@@ -15,6 +15,9 @@ import img9 from './assets/Home/group343.png'
 import img11 from './assets/Home/dumble.png'
 import { Component } from 'react';
 import axios from 'axios';
+import Backdrop from './Backdrop/Backdrop';
+import PopUp from './PopUp'
+
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
@@ -22,6 +25,7 @@ class Home extends Component {
     constructor() {
         super();
         this.state = {
+            popup: false,
             phone_number: null,
             name: null,
             email: null,
@@ -38,10 +42,31 @@ class Home extends Component {
         this.setState({ phone_number: e })
     }
 
+    toogle_popup = () => {
+        this.setState({
+            popup: !this.state.popup
+        })
+    }
+    backdropCLickHandler = () => {
+        this.setState({
+            popup: false,
+        });
+
+    }
+
+    set_null = () => {
+        this.setState({
+            phone_number: null,
+            name: null,
+            email: null,
+            message: null,
+
+        })
+    }
+
     onsubmit = (e) => {
         e.preventDefault();
         const curr_state = { phone_number: this.state.phone_number, name: this.state.name, email: this.state.email, message: this.state.message, userType: "USER" }
-        // console.log(curr_state + "*******");
         if (curr_state.phone_number == null || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17) || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
@@ -61,7 +86,9 @@ class Home extends Component {
             .then((resp) => {
                 document.getElementById("message_contact2").innerHTML = ""
                 document.getElementById("message_contact").innerHTML = ""
-                document.getElementById("message_contact").innerHTML = "Thanks for contacting, Our Member reach out to you soon"
+                this.set_null();
+                // document.getElementById("message_contact").innerHTML = "Thanks for contacting, Our Member reach out to you soon"
+                this.toogle_popup();
                 var frm = document.getElementById('contact_abc');
                 setTimeout(
                     () => {
@@ -89,6 +116,10 @@ class Home extends Component {
     }
     render() {
         // console.log(this.state.phone_number)
+        let backdrop;
+        if (this.state.popup) {
+            backdrop = <Backdrop click={this.backdropCLickHandler} />;
+        }
         return (
             <div className="App">
                 <div className="upper_part">
@@ -133,20 +164,20 @@ class Home extends Component {
                         <div className="mob" style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <div class="card">
                                 <img src={img1} alt="" class="mb-4" />
-                                <h3> Broad spectrum of events  </h3>
+                                <h3 className="mob_head_2"> Broad spectrum of events  </h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     EVENTSTAN is all about variety and versatility. Contact us for birthdays, weddings, anniversaries, corporate events, live concerts, product launch, and even college events.
                     </p>
                             </div>
                             <div class="card">
                                 <img src={img2} alt="" class="mb-4" />
-                                <h3>Completly customizable</h3>
+                                <h3 className="mob_head_2">Completly customizable</h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }} style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     There are no hard and fast packages that you have to pick from. EVENTSTAN gives you complete freedom to choose what you want.            </p>
                             </div>
                             <div class="card">
                                 <img src={img3} alt="" class="mb-4" />
-                                <h3>Get a pro on demand</h3>
+                                <h3 className="mob_head_2">Get a pro on demand</h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     We don’t stop at creating custom event packages, for we also have comperes, DJs, and many other Pros expert in their work.
    </p>
@@ -239,7 +270,7 @@ class Home extends Component {
                                     <div class="form-group">
                                         <label>Mobile number</label>
                                         <PhoneInput
-                                            // value={this.state.phone_number}
+                                            value={this.state.phone_number}
                                             international
                                             countryCallingCodeEditable={false}
                                             defaultCountry="AE"
@@ -265,7 +296,10 @@ class Home extends Component {
                         </form>
                     </Container>
                 </div>
-
+                {this.state.popup ?
+                    < PopUp />
+                    : null}
+                {backdrop}
             </div>
         );
 

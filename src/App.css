@@ -118,7 +118,7 @@ a.navbar-brand {
 
 .card p {
 	color: black;
-	margin-top: 20px;
+	margin-top: 15px;
 	font-size: 18px;
 }
 
@@ -225,7 +225,10 @@ a.navbar-brand {
 		background-image: url(./assets/mob_back.png);
 	}
 	a.navbar-brand {
-		font-size: 22px;
+		font-size: 18px;
+	}
+	.mob_head_2 {
+		font-size: 20px;
 	}
 }
 
