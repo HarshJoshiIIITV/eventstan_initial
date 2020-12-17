@@ -45,7 +45,7 @@ class Homeext extends Component {
                         <a href="/eventstan" class="navbar-brand">Event<span className="colored">stan</span></a>
                     </div>
                     <div className="banner-content">
-                        <h2 className="banner-title">Want to join EVENTSTAN as a professional?</h2>
+                        <h2 className="banner-title bold_me">Want to join EVENTSTAN as a professional?</h2>
                         <p className="banner-text">You’ve made the right choice. let’s get started!</p>
                         <Button href="#contact_ext" style={{ backgroundColor: "#F47824" }} >Signup as a Professional</Button>
                     </div>
@@ -55,7 +55,7 @@ class Homeext extends Component {
                         <Container>
                             <Row>
                                 <Col xs={12} md={12}>
-                                    <h2 class="title" style={{
+                                    <h2 class="title bold_me" style={{
                                         color: "#2D2D2D",
                                         fontFamily: "Campton"
                                     }}>EVENTSTAN is where you get to work with the most prestigious clients. we’ll take your career to unprecedented heights.</h2>
@@ -68,9 +68,9 @@ class Homeext extends Component {
                 <div style={{ textAlign: 'center', padding: '5% 0%' }}>
                     <div>
                         <Container>
-                            <h4 style={{ color: '#F47824', fontWeight: 'bold' }}>We’d love to have you onboard.</h4>
-                            <h2 className="title" style={{ color: '#2D2D2D', fontFamily: 'Campton', fontWeight: 'bold' }}>Why should you be here, on <br /> EVENTSTAN?</h2>
-                            <h3>Joining hands with us will bring you more than a <br /> bagful of benefits.</h3>
+                            <h4 style={{ color: '#F47824', fontWeight: 'bold' }} className="bold_me">We’d love to have you onboard.</h4>
+                            <h2 className="title bold_me" style={{ color: '#2D2D2D', fontFamily: 'Campton', fontWeight: 'bold' }}>Why should you be here, on <br /> EVENTSTAN?</h2>
+                            <h3 className="bold_me">Joining hands with us will bring you more than a <br /> bagful of benefits.</h3>
 
                         </Container>
                     </div>
@@ -82,7 +82,7 @@ class Homeext extends Component {
                         </Col>
                         <Col md={6}>
                             <div style={{ position: 'relative', top: '30%' }}>
-                                <h2>Better connections</h2>
+                                <h2 className="bold_me">Better connections</h2>
                                 <br />
                                 <h3>EVENTSTAN facilitates faster and more professional networking with your audience.</h3>
 
@@ -93,7 +93,7 @@ class Homeext extends Component {
                     <Row style={{ margin: '0px', padding: '0px' }}>
                         <Col md={6}>
                             <div style={{ position: 'relative', top: '30%' }}>
-                                <h2>Better schedule management</h2>
+                                <h2 className="bold_me">Better schedule management</h2>
                                 <br />
                                 <h3>With the in-built dashboard, EVENTSTAN ensures your appointments never clash.</h3>
 
@@ -110,7 +110,7 @@ class Homeext extends Component {
                         </Col>
                         <Col md={6}>
                             <div style={{ position: 'relative', top: '30%' }}>
-                                <h2>Better output</h2>
+                                <h2 className="bold_me">Better output</h2>
                                 <br />
                                 <h3>A streamlined scheduling and faster closure helps you enhance your productivity.</h3>
 
@@ -122,7 +122,7 @@ class Homeext extends Component {
 
                         <Col md={6}>
                             <div style={{ position: 'relative', top: '30%' }}>
-                                <h2>Flexible work</h2>
+                                <h2 className="bold_me">Flexible work</h2>
                                 <br />
                                 <h3>Nobody will force you to do anything. choose your event as and when you deem fit.</h3>
 
@@ -139,7 +139,7 @@ class Homeext extends Component {
                         </Col>
                         <Col md={6}>
                             <div style={{ position: 'relative', top: '30%' }}>
-                                <h2>No hassles</h2>
+                                <h2 className="bold_me">No hassles</h2>
                                 <br />
                                 <h3>From payment concerns to coordinating with the client, everything will be handled by EVENTSTAN</h3>
 
@@ -150,7 +150,7 @@ class Homeext extends Component {
                 </div>
                 <div className="Contact_sec mr-0">
                     <Container className="contact_container" id="contact_ext">
-                        <h2 style={{ color: '#2D2D2D', textAlign: 'center' }} className="title">Let’s get to know you better.</h2>
+                        <h2 style={{ color: '#2D2D2D', textAlign: 'center' }} className="title bold_me">Let’s get to know you better.</h2>
                         <br />
                         <div style={{ display: 'flex', justifyContent: 'left' }}>
                             <li class={"nav-item " + x} onClick={this.toggle_form2}>

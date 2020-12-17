@@ -128,7 +128,7 @@ class Home extends Component {
                         <Button className="button_homepage" href="/professional" style={{ backgroundColor: "#F47824" }}>Become a Professional</Button>
                     </div>
                     <div className="banner-content">
-                        <h2 className="banner-title">We don’t just create events we create memories</h2>
+                        <h2 className="banner-title  bold_me">We don’t just create events we create memories</h2>
                         <p className="banner-text">EVENTSTAN is where all your personal and corporate event needs meet under one roof. You choose, and we deliver.</p>
                     </div>
                 </div>
@@ -143,7 +143,7 @@ class Home extends Component {
                                 </Col>
                                 <Col md={1} />
                                 <Col xs={12} md={5} style={{ paddingTop: '25px' }}>
-                                    <h2 class="title">Who we are?</h2>
+                                    <h2 class="title bold_me">Who we are?</h2>
                                     <p class="p-text">
                                         We are the perfect amalgam of technology and event planning &amp; organizing. We know what it takes to create a successful event. We do all the work so you can enjoy and share the jubilant mood with everyone. We make sure your event checklist is complete with all the shenanigans.
                                         .
@@ -158,26 +158,26 @@ class Home extends Component {
                 </div>
                 <div className="application_sec">
                     <Container>
-                        <h2 style={{ color: '#343a40', textAlign: 'center' }} className="title">What makes us different from other <br />  applications?</h2>
+                        <h2 style={{ color: '#343a40', textAlign: 'center' }} className="title bold_me">What makes us different from other <br />  applications?</h2>
                         {/* <div style={{ textAlign: 'center' }}><Button style={{ backgroundColor: "#F47824" }}>Become a Professional</Button>
               </div> */}
                         <div className="mob" style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <div class="card">
                                 <img src={img1} alt="" class="mb-4" />
-                                <h3 className="mob_head_2"> Broad spectrum of events  </h3>
+                                <h3 className="mob_head_2 bold_me"> Broad spectrum of events  </h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     EVENTSTAN is all about variety and versatility. Contact us for birthdays, weddings, anniversaries, corporate events, live concerts, product launch, and even college events.
                     </p>
                             </div>
                             <div class="card">
                                 <img src={img2} alt="" class="mb-4" />
-                                <h3 className="mob_head_2">Completly customizable</h3>
+                                <h3 className="mob_head_2 bold_me">Completly customizable</h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }} style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     There are no hard and fast packages that you have to pick from. EVENTSTAN gives you complete freedom to choose what you want.            </p>
                             </div>
                             <div class="card">
                                 <img src={img3} alt="" class="mb-4" />
-                                <h3 className="mob_head_2">Get a pro on demand</h3>
+                                <h3 className="mob_head_2 bold_me">Get a pro on demand</h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     We don’t stop at creating custom event packages, for we also have comperes, DJs, and many other Pros expert in their work.
    </p>
@@ -187,34 +187,34 @@ class Home extends Component {
                 </div>
                 <div className="joining-us-bg space">
                     <Container>
-                        <h2 style={{ color: 'black', textAlign: 'center' }} className="title">Benifits of joining us</h2>
+                        <h2 style={{ color: 'black', textAlign: 'center' }} className="title bold_me">Benifits of joining us</h2>
                         {/* <div style={{ textAlign: 'center' }}><Button style={{ backgroundColor: "#F47824" }}>Become a Professional</Button>
               </div> */}
                         <div className="mob" style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <div class="card cardy">
                                 <img src={img4} alt="" class="mb-4" />
-                                <h3> Complete peace of mind  </h3>
+                                <h3 className="bold_me"> Complete peace of mind  </h3>
                                 <p>
                                     EVENTSTAN is all about punctuality and commitment, that’s what we strive for.
                     </p>
                             </div>
                             <div class="card cardy">
                                 <img src={img5} alt="" class="mb-4" />
-                                <h3>Quality of service</h3>
+                                <h3 className="bold_me">Quality of service</h3>
                                 <p>
                                     EVENTSTAN is driven by the most important growth aspect: Client Satisfaction.
                     </p>
                             </div>
                             <div class="card cardy">
                                 <img src={img6} alt="" class="mb-4" />
-                                <h3> Memories that matter  </h3>
+                                <h3 className="bold_me"> Memories that matter  </h3>
                                 <p>
                                     Make memories with your guests, leave all the event related work to us.
                     </p>
                             </div>
                             <div class="card cardy">
                                 <img src={img7} alt="" class="mb-4" />
-                                <h3> Successful events</h3>
+                                <h3 className="bold_me"> Successful events</h3>
                                 <p>
                                     Awesome events become the talk of the town, it’s your turn to become one.
                     </p>
@@ -225,7 +225,7 @@ class Home extends Component {
 
                 <div className="application_sec para3" >
                     <Container>
-                        <h2 style={{ color: '#343a40', textAlign: 'center' }} className="title">Want to join us as a professional?</h2>
+                        <h2 style={{ color: '#343a40', textAlign: 'center' }} className="title bold_me">Want to join us as a professional?</h2>
                         <br />
                         <div style={{ textAlign: 'center' }}><Button style={{ backgroundColor: "#F47824" }} href="/professional#contact_ext">Become a Professional</Button>
                         </div>
@@ -233,21 +233,21 @@ class Home extends Component {
                         <div className="mob" style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <div class="card">
                                 <img src={img10} alt="" class="mb-4" />
-                                <h3>Introduce <br /> yourself </h3>
+                                <h3 className="bold_me">Introduce <br /> yourself </h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     Who you are, what you do, what do you love the most about what you do, things that matter.
                     </p>
                             </div>
                             <div class="card">
                                 <img src={img11} alt="" class="mb-4" />
-                                <h3> Get your <br /> dashboard </h3>
+                                <h3 className="bold_me"> Get your <br /> dashboard </h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     Get all the required information and data at one place. Be more efficient and more productive.
                     </p>
                             </div>
                             <div class="card">
                                 <img src={img9} alt="" class="mb-4" />
-                                <h3> Create your marketplace </h3>
+                                <h3 className="bold_me"> Create your marketplace </h3>
                                 <p style={{ fontWeight: 'lighter', color: '#5a5a5c' }}>
                                     Connect with clients from all over the region and offer your services without breaking a sweat.
                     </p>
@@ -258,7 +258,7 @@ class Home extends Component {
 
                 <div className="Contact_sec mr-0">
                     <Container id="contactform_home" className="contact_container">
-                        <h2 style={{ color: '#2D2D2D', textAlign: 'center' }} className="title">Contact us</h2>
+                        <h2 style={{ color: '#2D2D2D', textAlign: 'center' }} className="title bold_me">Contact us</h2>
                         <br />
                         <form id="contact_abc" onSubmit={this.onsubmit} >
                             <div class="form-group">

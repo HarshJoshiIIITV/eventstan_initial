@@ -5,6 +5,12 @@
 }
 
 @font-face {
+	font-family: 'exotic';
+	src: local('exotic'),
+		url(./assets/Exotc/Exotc350BdBTBold.ttf) format('truetype');
+}
+
+@font-face {
 	font-family: 'campton_bold';
 	src: local('campton_bold'),
 		url(./assets/campton/campton-medium.ttf) format('truetype');

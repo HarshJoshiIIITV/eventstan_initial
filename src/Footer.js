@@ -8,12 +8,12 @@ const Footer = () => {
                 <Container>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div>
-                            <h4>Eventstan</h4>
+                            <h4 className="bold_me">Eventstan</h4>
                             <p><a href="/eventstan#contactform_home"> <p>Contact us</p></a></p>
                             <p><a href="/professional">Professional</a></p>
                         </div>
                         <div>
-                            <h4>Information</h4>
+                            <h4 className="bold_me">Information</h4>
                             <p>Eventstan-Fze , DTech ,Technohub 1, Dubai Silicon Oasis, Dubai,</p>
                             <p><a href="mailto:eventstan@hotmail.com">hello@eventstan.com</a></p>
                             <p><a href="tel:9876543210">9876543210</a></p>
@@ -30,13 +30,13 @@ const Footer = () => {
             <div className="footer_mob">
                 <div style={{ padding: '10px' }}>
                     <div style={{ paddingTop: '8px' }}>
-                        <h4>Eventstan</h4>
+                        <h4 className="bold_me">Eventstan</h4>
                         <p><a href="/eventstan#contactform_home"> <p>Contact us</p></a></p>
                         <p><a href="/professional">Professional</a></p>
                     </div>
                     <br />
                     <div>
-                        <h4>Information</h4>
+                        <h4 className="bold_me">Information</h4>
                         <p>Eventstan-Fze , DTech ,Technohub 1, Dubai Silicon Oasis, Dubai,</p>
                         <p><a href="mailto:eventstan@hotmail.com">hello@eventstan.com</a></p>
                         <p><a href="tel:9876543210">9876543210</a></p>
