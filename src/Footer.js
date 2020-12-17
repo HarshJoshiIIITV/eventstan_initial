@@ -16,7 +16,7 @@ const Footer = () => {
                             <h4 className="bold_me">Information</h4>
                             <p>Eventstan-Fze , DTech ,Technohub 1, Dubai Silicon Oasis, Dubai,</p>
                             <p><a href="mailto:eventstan@hotmail.com">hello@eventstan.com</a></p>
-                            <p><a href="tel:9876543210">9876543210</a></p>
+                            <p><a href="tel:+971529415444">+971529415444</a></p>
                         </div>
                     </div>
                     <hr class="bg-light" />
@@ -39,7 +39,7 @@ const Footer = () => {
                         <h4 className="bold_me">Information</h4>
                         <p>Eventstan-Fze , DTech ,Technohub 1, Dubai Silicon Oasis, Dubai,</p>
                         <p><a href="mailto:eventstan@hotmail.com">hello@eventstan.com</a></p>
-                        <p><a href="tel:9876543210">9876543210</a></p>
+                        <p><a href="tel:+971529415444">+971529415444</a></p>
                     </div>
 
                     <hr class="bg-light" />
