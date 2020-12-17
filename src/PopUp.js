@@ -6,7 +6,7 @@ class PopUp extends Component {
     render() {
         return (
             <div className="popup">
-                <h5 className="bold_me">Thank you! <br /> Our representative will get back to you within 2 working days.</h5>
+                <h5 className="bold_me" style={{ fontSize: '18px' }}>Thank you! <br /> Our representative will get back to you within 2 working days.</h5>
             </div>
         )
     }
