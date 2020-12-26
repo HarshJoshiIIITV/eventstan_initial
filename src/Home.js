@@ -2,21 +2,22 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import img0 from './assets/home_box.png'
-import img1 from './assets/Home/arrow_img.png'
-import img4 from './assets/Home/group24.png'
-import img10 from './assets/Home/group25.png'
-import img2 from './assets/Home/arrow_img2.png'
-import img3 from './assets/Home/arrow_img3.png'
-import img6 from './assets/Home/group243.png'
-import img7 from './assets/Home/group245.png'
-import img5 from './assets/Home/group242.png'
+import img1 from './assets/landing page pngs/what ic 1@2x.png'
+import img4 from './assets/landing page pngs/benefit 1@2x.png'
+import img10 from './assets/landing page pngs/pro 1@2x.png'
+import img2 from './assets/landing page pngs/what ic 2@2x.png'
+import img3 from './assets/landing page pngs/what ic 3@2x.png'
+import img6 from './assets/landing page pngs/benefit 3@2x.png'
+import img7 from './assets/landing page pngs/benefit 4@2x.png'
+import img5 from './assets/landing page pngs/benefit 2@2x.png'
 import img8 from './assets/Home/group342.png'
-import img9 from './assets/Home/group343.png'
-import img11 from './assets/Home/dumble.png'
+import img9 from './assets/landing page pngs/pro 3@2x.png'
+import img11 from './assets/landing page pngs/pro 2@2x.png'
 import { Component } from 'react';
 import axios from 'axios';
 import Backdrop from './Backdrop/Backdrop';
 import PopUp from './PopUp'
+
 
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
@@ -67,7 +68,20 @@ class Home extends Component {
     onsubmit = (e) => {
         e.preventDefault();
         const curr_state = { phone_number: this.state.phone_number, name: this.state.name, email: this.state.email, message: this.state.message, userType: "USER" }
-        if (curr_state.phone_number == null || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17) || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
+        if (curr_state.phone_number == null || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17)) {
+            document.getElementById("message_contact2").innerHTML = ""
+            document.getElementById("message_contact").innerHTML = ""
+            document.getElementById("message_contact2").innerHTML = "Please fill mobile number correctly "
+            setTimeout(
+                () => {
+                    document.getElementById("message_contact").innerHTML = "";
+                    document.getElementById("message_contact2").innerHTML = "";
+                },
+                5000
+            )
+            return;
+        }
+        if (curr_state.email == null || curr_state.name == null || curr_state.message == null) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
             document.getElementById("message_contact2").innerHTML = "Please fill all details!"
@@ -156,7 +170,7 @@ class Home extends Component {
 
                     </div>
                 </div>
-                <div className="application_sec">
+                <div className="application_sec" id="section_2a">
                     <Container>
                         <h2 style={{ color: '#343a40', textAlign: 'center' }} className="title bold_me">What makes us different from other <br />  applications?</h2>
                         {/* <div style={{ textAlign: 'center' }}><Button style={{ backgroundColor: "#F47824" }}>Become a Professional</Button>
